@@ -1,0 +1,20 @@
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()" >
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <div class="input-group-text">
+        <input formControlName="complete" (change)="onSubmit()" type="checkbox" aria-label="Checkbox for following text input"
+        >
+      </div>
+    </div>
+    <input
+      [style.textDecoration]="articleForm.value.complete ? 'line-through' : 'none' "
+      formControlName="name" (keyup)="onSubmit()" type="text" class="form-control" aria-label="Text input with checkbox"
+    >
+    <div class="input-group-append">
+      <button
+        (click)="onDelete()"
+        class="btn btn-sm btn-danger" type="button" id="button-addon2">X</button>
+    </div>
+
+  </div>
+</form>

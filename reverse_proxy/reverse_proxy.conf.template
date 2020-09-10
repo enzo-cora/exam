@@ -1,0 +1,13 @@
+upstream api_immo{
+        server ${API_HOSTNAME}:${API_PORT};
+}
+
+server {
+    listen 80;
+    server_name ${PROXY_HOSTNAME};
+
+    location /api1 {
+        proxy_pass http://api_immo;
+        error_log /var/log/nginx/log_api_immo;
+    }	
+}

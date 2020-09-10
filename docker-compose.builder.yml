@@ -1,0 +1,17 @@
+version: '3.8'
+
+x-api: &default-base #Recupere le Contenu du block
+  image: node:14.9
+  volumes:
+    - ./api_node:/usr/src/app
+  working_dir: /usr/src/app
+
+services :
+  install_api:
+    << : *default-base #Colle toutes les clé : valeurs de la variable "&default-base"
+    command: npm i
+    
+volumes:
+  mongoCourse:
+    external: true
+

@@ -1,0 +1,10 @@
+<form [formGroup]="articleForm" (ngSubmit)="onSubmit()" >
+
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <button [disabled]="!articleForm.value.name"  class="btn btn-primary" type="submit" id="button-addon1">Ajouter</button>
+    </div>
+    <input formControlName="name" type="text" class="form-control" placeholder="Ajouter un article" aria-label="Example text with button addon" aria-describedby="button-addon1">
+  </div>
+
+</form>
