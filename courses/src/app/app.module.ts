@@ -8,13 +8,23 @@ import { AddComponent } from './components/add/add.component';
 import { UpdateComponent } from './components/update/update.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import {RouterModule} from "@angular/router";
+import { Error404Component } from './components/error404/error404.component';
+import { HeaderComponent } from './components/header/header.component';
+import {LoginIntercepteurProdiver} from "./services/interceptors/jwt-interceptor";
 
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     AddComponent,
-    UpdateComponent
+    UpdateComponent,
+    LoginComponent,
+    RegisterComponent,
+    Error404Component,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -22,8 +32,11 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule,
   ],
-  providers: [],
+  providers: [
+    LoginIntercepteurProdiver
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

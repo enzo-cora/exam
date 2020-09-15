@@ -2,6 +2,7 @@
 export interface Article {
   _id : string,
   name : string,
-  complete : boolean
+  complete : boolean,
+  userId : string
 }
 

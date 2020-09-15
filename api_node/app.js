@@ -8,6 +8,7 @@ const app = express()
 //------- Require Router ---------------
 
 const routeArticle = require('./routes/route_article')
+const routeAuth = require('./routes/route_auth')
 
 
 
@@ -22,6 +23,7 @@ app.use((req, res, next) => {
     next();
 });
 
+
 //-------------------Les MidleWare ------------------------------------------
 app.use(bodyparser.urlencoded({extended:false}))
 app.use(bodyparser.json())
@@ -34,6 +36,7 @@ router.use('/assets',express.static('public'))
 
 
 router.use('/article',routeArticle)
+router.use('/authentification',routeAuth)
 
 const port = process.env.API_PORT || 3000
 app.listen(port,()=>{

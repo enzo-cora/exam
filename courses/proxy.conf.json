@@ -1,5 +1,5 @@
 {
-  "/": {
+  "/api1": {
     "target": "http://localhost",
     "secure": false
   }

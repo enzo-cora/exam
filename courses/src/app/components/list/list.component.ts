@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Article} from "../../model/article";
 import {CoursesService} from "../../services/courses.service";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-list',

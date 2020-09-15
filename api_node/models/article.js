@@ -9,6 +9,10 @@ const schemarticle = mongoose.Schema({
         type : Boolean,
         default : false
     },
+    userId : {
+        type : String,
+        required:"L'id doit être fournis ! "
+    }
 });
 
 module.exports = mongoose.model('article', schemarticle)
