@@ -14,6 +14,9 @@ import {RouterModule} from "@angular/router";
 import { Error404Component } from './components/error404/error404.component';
 import { HeaderComponent } from './components/header/header.component';
 import {LoginIntercepteurProdiver} from "./services/interceptors/jwt-interceptor";
+import {MessagesInterceptorProvider} from "./services/interceptors/messages-interceptor";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -33,9 +36,12 @@ import {LoginIntercepteurProdiver} from "./services/interceptors/jwt-interceptor
     ReactiveFormsModule,
     HttpClientModule,
     RouterModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [
-    LoginIntercepteurProdiver
+    LoginIntercepteurProdiver,
+    MessagesInterceptorProvider
   ],
   bootstrap: [AppComponent]
 })

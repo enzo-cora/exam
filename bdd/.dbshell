@@ -16,6 +16,11 @@ var passwd = 'enzo';
 var rootUser = 'admin';
 var rootPassword = 'admin';
 var admin = db.getSiblingDB('admin');
+var user = 'enzo';
+var passwd = 'enzo';
+var rootUser = 'admin';
+var rootPassword = 'admin';
+var admin = db.getSiblingDB('admin');
 
 var user = 'enzo';
 var passwd = 'enzo';

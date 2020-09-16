@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <p *ngIf="!name" class="navbar-brand">Faites vos courses</p>
+  <p *ngIf="name" class="navbar-brand">Liste de {{name}}</p>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
+      <div *ngIf="isAuth">
+        <button class="nav-item btn btn-primary mr-2" routerLink="/liste" >Ma liste</button>
+        <button (click)="logout()" class="nav-item btn btn-outline-danger mr-2">Déconnexion</button>
+      </div>
+      <div *ngIf="!isAuth">
+        <button class="nav-item btn btn-primary mr-2" routerLink="/authentification/connexion">Connexion</button>
+        <button class="nav-item btn btn-outline-primary mr-2" routerLink="/authentification/inscription">Inscription</button>
+      </div>
+
+    </div>
+  </div>
+</nav>
